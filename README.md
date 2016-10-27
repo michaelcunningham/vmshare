@@ -22,7 +22,7 @@ Setting up the vmshare repository
 	git commit -m "first commit"
 	git config --global user.name "Michael Cunningham"
 	git config --global user.email "napacunningham@gmail.com"
-	git remote add origin https://github.com/michaelcunningham/vmshare.git
+	git remote set-url origin https://michaelcunningham@github.com/michaelcunningham/vmshare.git
 	git push -u origin master
 
 Adding repository to another server
@@ -35,3 +35,4 @@ In this case I have another directory on windows and it is shared to the vm as v
    as michael:
 	cd /mnt/vmshare
 	git clone https://github.com/michaelcunningham/vmshare.git .
+	git remote set-url origin https://michaelcunningham@github.com/michaelcunningham/vmshare.git

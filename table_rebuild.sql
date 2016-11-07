@@ -45,35 +45,3 @@ select to_char(date_trunc('month', getdate()-180),'yyyymmdd');
 select count(*) from click_event_t1_tmp;
 
 select now();
-
-drop table gold_event_t1;
-
-alter table ramblas.gold_event_t1_bkup rename to gold_event_t1;
-
-select  *
-from    stl_load_trace
-where   name like '%gold%'
-and     name not like '%gold_hold%'
-order by query desc, slice;
-
-select  *
-from    stl_load_trace
-where   query = 3081790
-order by slice, name;
-
-
-select count(*) from gold_event_t1;
-
-select * from stl_load_commits
-where filename like '%gold%'
-and     filename not like '%gold_hold%'
-order by query desc limit 500;
-
-
-where   query = 3081790
-order by slice, name;
-
-select * from stv_load_state
-order by query desc limit 500;
-where   query = 3081790;
-
